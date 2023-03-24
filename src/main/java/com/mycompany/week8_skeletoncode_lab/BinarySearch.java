@@ -4,6 +4,7 @@
  */
 package com.mycompany.week8_skeletoncode_lab;
 
+
 /**
  *
  * @author MoaathAlrajab
@@ -15,7 +16,7 @@ public class BinarySearch {
         int index = Integer.MAX_VALUE;
 
         while (low <= high) {
-            int mid = low + ((high - low) / 2);
+            int mid = low + ((high - low) / 2);         //Binary Search time complexity is O(logn), space complexity is O(1)
             if (sortedArray[mid] < key) {
                 low = mid + 1;
             } else if (sortedArray[mid] > key) {
@@ -27,7 +28,22 @@ public class BinarySearch {
         }
         return index;
     }
-    //ToDo 2: Call the above method and test the algorithm  
-    // provide time and space analysis 
 
+    public static void main(String args[]) {
+        int[] A = {2, 5, 6, 8, 9, 10};
+        int key = 8;
+        int low = 0;
+        int high = A.length - 1;
+        int index = runBinarySearchIteratively(A, key, low, high);
+
+        if (index != -1) {
+            System.out.println("Element found at index " + index);
+        } else {
+            System.out.println("Element not found in the array");
+        }
+    }
 }
+
+//ToDo 2: Call the above method and test the algorithm  
+// provide time and space analysis 
+

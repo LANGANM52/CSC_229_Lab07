@@ -14,10 +14,29 @@ public class BubbleSort {
         int outer, inner, temp;
         for (outer = size - 1; outer > 0; outer--) { // counting down
             for (inner = 0; inner < outer; inner++) { // bubbling up
-                //ToDo 3: complete this algorithm, test it, provide its time complexity
+                if (a[inner] > a[inner + 1]) {       //Bubble Sort time complexity is O(N^2), space complexity is O(1)
+                    temp = a[inner];
+                    a[inner] = a[inner + 1];
+                    a[inner + 1] = temp;
+                }
             }
+
         }
     }
-    
-    
+
+    static void printArray(int arr[], int size) {
+        int i;
+        for (i = 0; i < size; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String args[]) {
+        int arr[] = {64, 34, 25, 12, 22, 11, 90};
+        int n = arr.length;
+        bubbleSort(arr, n);
+        System.out.println("Sorted array: ");
+        printArray(arr, n);
+    }
 }
